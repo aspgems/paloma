@@ -22,7 +22,7 @@ Paloma.ControllerClassFactory.prototype = {
   _updateParent: function(controller, parent){
     if (!parent) return;
 
-    var parentClass = this.get(parent);
+    var parentClass = this._getOrCreate(parent);
     if (parentClass) controller.prototype.__proto__ = parentClass.prototype;
   },
 
